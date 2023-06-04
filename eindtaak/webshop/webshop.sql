@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 03 jun 2023 om 13:03
+-- Gegenereerd op: 04 jun 2023 om 11:26
 -- Serverversie: 8.0.31
 -- PHP-versie: 8.0.26
 
@@ -56,9 +56,25 @@ DROP TABLE IF EXISTS `bestelling`;
 CREATE TABLE IF NOT EXISTS `bestelling` (
   `bestelnummer` int NOT NULL AUTO_INCREMENT,
   `gebruikernummer` int NOT NULL,
+  `artikelnaam` text NOT NULL,
+  `prijs` int NOT NULL,
+  `aantal` int NOT NULL,
   `artikelnummer` int NOT NULL,
   PRIMARY KEY (`bestelnummer`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `bestelling`
+--
+
+INSERT INTO `bestelling` (`bestelnummer`, `gebruikernummer`, `artikelnaam`, `prijs`, `aantal`, `artikelnummer`) VALUES
+(1, 5, 'Yamaha R1M', 27905, 3, 2),
+(2, 5, 'Yamaha R1M', 27905, 3, 2),
+(3, 5, 'Yamaha R1M', 27905, 3, 2),
+(4, 5, 'yamaha r7', 7500, 3, 5),
+(5, 5, 'yamaha r6', 14299, 3, 4),
+(6, 5, 'yamaha r7', 7500, 5, 5),
+(7, 20, 'Yamaha R1M', 27905, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -138,7 +154,10 @@ CREATE TABLE IF NOT EXISTS `winkelkar` (
 
 INSERT INTO `winkelkar` (`gebruikernummer`, `artikelnummer`, `afbeelding`, `artikelnaam`, `prijs`, `aantal`) VALUES
 (21, 2, 'https://img.etimg.com/thumb/msid-46917228,width-640,resizemode-4,imgsize-206972/yamaha-launches-yzf-r1m-in-india-priced-at-rs-29-43-lakh.jpg', 'Yamaha R1M', 27905, 3),
-(21, 4, 'https://global-fs.webike-cdn.net/moto_img/cg/8/7859/L_11bcd16b3cf0e22121d61f094a.jpg', 'yamaha r6', 14299, 4);
+(21, 4, 'https://global-fs.webike-cdn.net/moto_img/cg/8/7859/L_11bcd16b3cf0e22121d61f094a.jpg', 'yamaha r6', 14299, 4),
+(2, 4, 'https://global-fs.webike-cdn.net/moto_img/cg/8/7859/L_11bcd16b3cf0e22121d61f094a.jpg', 'yamaha r6', 14299, 1),
+(2, 5, 'https://bwmotors.be/wp-content/uploads/2021/09/2022_YAM_YZF700R7_EU_YB_STA_001_03_preview-kopie.jpg', 'yamaha r7', 7500, 100),
+(2, 2, 'https://img.etimg.com/thumb/msid-46917228,width-640,resizemode-4,imgsize-206972/yamaha-launches-yzf-r1m-in-india-priced-at-rs-29-43-lakh.jpg', 'Yamaha R1M', 27905, 2);
 
 -- --------------------------------------------------------
 

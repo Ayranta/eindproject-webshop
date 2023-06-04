@@ -141,31 +141,32 @@
                         $sql = "select * from winkelkar where gebruikernummer = ".$gebruikersnummer;
                         ?>
                         <?php
-                        echo "<table>";
-                        $resultaat = $mysqli->query($sql);
-                        while ($row = $resultaat->fetch_assoc()) {
 
-                            echo "<tr><td>". $row['artikelnummer']." . " . "</td><td>". $row['artikelnaam'] . "</td><td>". $row['aantal'] . "</td><td>". $row['prijs'] . "</td></tr>";
-
-                        }
-
-
-                        echo "</table>";
                             echo '   
                         <form method="post" action="afrekenen.php">
                         <input type="submit" id="knop" name="knop" value="Home">
                         </form>
                         ';
 
-                        echo ' <form method="post" action="afrekenen.php">
+                            echo ' <form method="post" action="afrekenen.php">
                         <input type="submit" id="pdf" name="pdf" value="Pdf">
                         </form>
                         ';
+
+                            echo "<br>\n";
+                            echo "<br>\n";
+                            echo "<br>\n";
+
+
+                        $resultaat = $mysqli->query($sql);
+                        while ($row = $resultaat->fetch_assoc()) {
+
+                          echo $row['artikelnummer'] . " "  . $row['artikelnaam'] . " " . $row['aantal'] . " x € " . $row['prijs'] . " = € "  . $row["aantal"]*$row["prijs"] . "<br>\n";
+                        }
+                        echo " " . "<br>\n";
+
                         }
                         ?>
-
-
-
 
 
 

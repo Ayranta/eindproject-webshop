@@ -142,7 +142,8 @@
                     <div class="row grid">
                         <?php
 
-                        $sql = "SELECT bestelnummer, gebruikernummer,artikelnummer,prijs,artikelnaam FROM bestelling";
+                        $sql = "SELECT * FROM bestelling";
+
                         $resultaat = $mysqli->query($sql);
 
 
@@ -152,7 +153,7 @@
                             echo ' <div class="col-md-4">
                                  <div class="product-item">
                                         <div class="down-content">
-                                            <a><h4>bestelnummer ' . $row["bestelnummer"] . '</h4><h4>artikkelnaam '.$row["artikelnummer"].'</h4><h4>'.$row["artikelnaam"].'</h4></a>
+                                            <a><h4>artikkelnaam '.$row["artikelnummer"].'</h4><h4>'.$row["artikelnaam"].'</h4></a>
                                               <p>prijs: ' . $row["prijs"] . '</p>
                                                  <p>' . $row["gebruikernummer"] . '</p>
                                                     

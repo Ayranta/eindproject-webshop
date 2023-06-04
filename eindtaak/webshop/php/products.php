@@ -168,12 +168,8 @@
                         echo "<table>";
                         while ($row = $resultaat->fetch_assoc()) {
 
-        if ($admin == 1) {
-            if (isset($_POST['btn-act'])){
+        if ($admin == 1 ) {
 
-
-
-            }
             echo '
                          <div class="col-md-4">
                                  <div class="product-item">
@@ -195,28 +191,22 @@
                                                         <li><i class="fa fa-star"></i></li>
                                                         <li><i class="fa fa-star"></i></li>
                                                         <li><i class="fa fa-star"></i></li>
-                                                     </ul>       
-            <ul>
-           
+                                                     </ul>    
+                                                        
+            <ul>   
                     <li class="nav-item">
                     <a class="nav-link" href=wijzig.php?teveranderen=' . $row["artikelnummer"] . '>wijzigen</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href=wissen.php?tewissen=' . $row["artikelnummer"] . '>wissen</a>
                     </li>
-                    <li class="nav-item">
                     
-                    </li>
                 </ul>
                                                 </div>
                                          </div>
                                  </div>';
         }else{
-            if (isset($_POST['btn-act'])){
 
-                $sql = "INSERT INTO winkel (artikelnummer, afbeelding, artikelnaam, prijs, aantal) VALUES ()";
-
-            }
             echo ' <div class="col-md-4">
                                  <div class="product-item">
                                     <a href="#"><img src=' . $row["afbeelding"] . ' alt=""></a>
@@ -224,12 +214,15 @@
                                             <a href="#"><h4>' . $row["artikelnaam"] . '</h4></a>
                                               <h6>' . $row["prijs"] . '€</h6>
                                                  <p>' . $row["extraUitleg"] . '</p>
+                                                 
+                                                                     <ul>
+                    <li>
+                    <a class="nav-link" href=aankoop.php?aantekopen=' .$row["artikelnummer"] . '>Add to Cart</a>
+                    </li>
+                    </ul> 
                                                    
                                                   
-                                                   
-                                                   <form method="post">
-                                                   <input type="submit" name="btn-act" value="Add to Cart">
-                                                   </form>
+                                               
                                                    
                                                   
                                                     <ul class="stars">
@@ -248,6 +241,7 @@
                         }
         if ($admin == 1) {
             echo'<a class="nav-link" href="toevoegen.php">toevoegen</a>';
+            echo'<a class="nav-link" href="afgerekend.php">bestelling bekijken</a>';
         }
 
                         echo "</table>";

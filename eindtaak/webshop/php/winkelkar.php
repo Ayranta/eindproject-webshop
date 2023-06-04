@@ -71,13 +71,7 @@
                     </li>
                     <?php
                     session_start();
-                    if (isset($_SESSION['admin'])){
-                        if ($_SESSION['admin']==0){
-                            header('Location: index.php');
-                        }
-                    }else{
-                        header('Location: index.php');
-                    }
+
                     if (isset($_SESSION["login"])) {
                         echo '
                 <li class="nav-item">
@@ -170,7 +164,7 @@
                                         <a href="#"><img src=' . $row["afbeelding"] . ' alt=""></a>
                                         <div class="down-content">
                                             <a href="#"><h4>' . $row["artikelnaam"] . '</h4></a>
-                                            <h6>' . $row["prijs"] . '€</h6>
+                                            <h6>€' . $row["prijs"] . '</h6>
                                             <p>Aantal ' . $row["aantal"] . '</p>
                                             <h5>Totaal '.$row["aantal"]*$row["prijs"].'</h5>
                                         </div>

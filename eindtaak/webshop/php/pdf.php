@@ -86,6 +86,7 @@ $pdf_data = mysqli_real_escape_string($mysqli, $pdf_data);
 
 echo "PDF werd aangemaakt";
 
+
 /*$resultaat = $mysqli->query("SELECT * FROM winkelkar WHERE gebruikernummer = '" . $login . "'");
 while ($row = $resultaat->fetch_assoc()) {
     $gebruikersnummer = $_SESSION["login"];

@@ -31,15 +31,7 @@
 
 <body>
 
-<!-- ***** Preloader Start ***** -->
-<div id="preloader">
-    <div class="jumper">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-</div>
-<!-- ***** Preloader End ***** -->
+
 
 <!-- Header -->
 <header class="">
@@ -150,11 +142,6 @@
 
                         $gebruikersnummer = $_SESSION["login"];
                         $sql = "select * from winkelkar where gebruikernummer = ".$gebruikersnummer;
-                        ?>
-
-
-
-                        <?php
                             echo "<table>";
                                 $resultaat = $mysqli->query($sql);
                                 while ($row = $resultaat->fetch_assoc()) {

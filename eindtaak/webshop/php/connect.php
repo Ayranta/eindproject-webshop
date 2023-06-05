@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli("localhost", "root", "", "webshop");
+$mysqli = new mysqli("localhost", "root", "", "webshop2");
 $aanpassenUTF = $mysqli->query("SET NAMES utf8");
 
 if ($mysqli->connect_errno) {
